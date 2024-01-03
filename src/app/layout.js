@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../styles/style.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,6 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Mat Jib</title>
+        <meta name='description' content='Description' />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
