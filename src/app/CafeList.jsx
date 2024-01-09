@@ -1,6 +1,6 @@
-// 'use client'
+'use client'
 
-// import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, getDocs } from "firebase/firestore"; 
 import { db } from '../../firebaseConfig';
@@ -12,18 +12,26 @@ async function getCafes() {
   return cafeList;
 }
 
-export default async function CafeList() {
-  const cafes = await getCafes();
+export default function CafeList() {
+  const [cafes, setCafes] = useState([])
+
+  useEffect(() => {
+    getCafes().then(setCafes);
+    console.log("useEffect ran...");
+  }, []);
 
   return (
     <>
-      {cafes.map((cafe) => (
-        <div key={cafe.id} className="base__card">
-          <span> { cafe.name } { cafe.nameJP }</span>
-        </div>
-      ))};
-   
-      
+    <ul className="list__no-bullets">
+      {cafes.map((cafe, i) => (
+        <li key={i} >
+          <div className="base__card">
+            <span className='text--base-color'> <span className='text__place-name'>{ cafe.name }</span> { cafe.nameJP }</span>
+            <p>{ cafe.address }</p>
+          </div>
+        </li>
+      ))}
+    </ul>
     </>
   )
 }

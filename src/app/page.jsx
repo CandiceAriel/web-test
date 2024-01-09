@@ -1,5 +1,5 @@
-import CafeList from "./cafeList";
-import Navbar from "@/components/navbar";
+import CafeList from "./CafeList.jsx";
+import Navbar from "@/components/navbar.jsx";
 
 export default async function Home() {
 

@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>Mat Jib</title>
-        <meta name='description' content='Description' />
+        <meta name='description' content='width=device-width, initial-scale=1.0' />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

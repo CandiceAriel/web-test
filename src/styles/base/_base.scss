@@ -2,16 +2,17 @@
   &__container{
     text-align: center;
     padding: 20px 100px;
-   
+   height: 100vh;
   }
 
   &__card{
     padding: 20px;
+    margin: 20px;
     box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
     width: 33.333%;
   }
 
   &__section{
-    padding: 10px;
+    display: flex;
   }
 }
